@@ -17,22 +17,22 @@ class IntroPage1 extends StatelessWidget {
                 children: [
                   Image(
                     image: AssetImage('assets/images/desfoque.png'),
-                    width: 225,
+                    width: 250,
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 12,
+              height: 24,
             ),
             SizedBox(
               child: SizedBox(
-                width: 280,
+                width: 325,
                 child: Center(
                   child: Text(
                     'Use shapes to decorate your designs',
                     style: TextStyle(
-                      fontSize: 28,
+                      fontSize: 32,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                     ),
@@ -42,15 +42,15 @@ class IntroPage1 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 12,
+              height: 16,
             ),
             SizedBox(
-              width: 300,
+              width: 325,
               child: Center(
                 child: Text(
                   'Decorate your design products with relevant shapes. Use basic geometric shapes like squares, circles or more complex shapes such as hearts, stars, bubbles to draw attention to your design segment!',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Roboto',
                   ),

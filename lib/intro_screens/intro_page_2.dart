@@ -20,22 +20,22 @@ class IntroPage2 extends StatelessWidget {
                 children: [
                   Image(
                     image: AssetImage('assets/images/quebrado.png'),
-                    width: 245,
+                    width: 275,
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 16,
+              height: 28,
             ),
             SizedBox(
               child: SizedBox(
-                width: 280,
+                width: 325,
                 child: Center(
                   child: Text(
                     'Combine shapes with other objects',
                     style: TextStyle(
-                      fontSize: 28,
+                      fontSize: 32,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                     ),
@@ -45,15 +45,15 @@ class IntroPage2 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 12,
+              height: 16,
             ),
             SizedBox(
-              width: 300,
+              width: 325,
               child: Center(
                 child: Text(
                   'Use arrows, lines, and illustrations to make unique visuals every time. Shapes may look simplistic and even basic, but they\'re a great addition to your designs. Don\'t get carries away, though! Too many shapes can overcomplicate your design.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Roboto',
                   ),

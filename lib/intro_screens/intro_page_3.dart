@@ -20,22 +20,22 @@ class IntroPage3 extends StatelessWidget {
                 children: [
                   Image(
                     image: AssetImage('assets/images/chiclete.png'),
-                    width: 225,
+                    width: 275,
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 16,
+              height: 24,
             ),
             SizedBox(
               child: SizedBox(
-                width: 280,
+                width: 325,
                 child: Center(
                   child: Text(
                     'Animate shapes to catch the attention',
                     style: TextStyle(
-                      fontSize: 28,
+                      fontSize: 32,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                     ),
@@ -45,15 +45,15 @@ class IntroPage3 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 12,
+              height: 16,
             ),
             SizedBox(
-              width: 300,
+              width: 325,
               child: Center(
                 child: Text(
                   'Geometric makes it very easy to animate any design object. There are animation presets that allow you to make a shape zoom, fade, wobble, shake, spin and more, with just a click of a button.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Roboto',
                   ),
