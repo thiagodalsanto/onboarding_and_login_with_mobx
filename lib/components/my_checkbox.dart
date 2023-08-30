@@ -31,8 +31,7 @@ class _MyCheckboxState extends State<MyCheckbox> {
       onChanged: (value) {
         setState(() {
           _isChecked = value!;
-          widget.onChanged(
-              _isChecked); // Notificando a mudança de estado para o pai.
+          widget.onChanged(_isChecked);
         });
       },
     );

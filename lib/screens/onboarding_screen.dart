@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_and_onboarding/intro_screens/intro_page_1.dart';
-import 'package:mobx_and_onboarding/intro_screens/intro_page_2.dart';
-import 'package:mobx_and_onboarding/intro_screens/intro_page_3.dart';
+import 'package:mobx_and_onboarding/screens/onboard_screens/onboard_page_1.dart';
+import 'package:mobx_and_onboarding/screens/onboard_screens/onboard_page_2.dart';
+import 'package:mobx_and_onboarding/screens/onboard_screens/onboard_page_3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'login_page.dart';
+import 'login_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -32,9 +32,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               });
             },
             children: const [
-              IntroPage1(),
-              IntroPage2(),
-              IntroPage3(),
+              OnBoardPage1(),
+              OnBoardPage2(),
+              OnBoardPage3(),
             ],
           ),
 

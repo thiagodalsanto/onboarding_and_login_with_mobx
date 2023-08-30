@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mobx_and_onboarding/components/my_button.dart';
 import 'package:mobx_and_onboarding/components/my_checkbox.dart';
 import 'package:mobx_and_onboarding/components/my_textfield.dart';
-import 'package:mobx_and_onboarding/user_logged.dart';
+import 'package:mobx_and_onboarding/screens/user_screens/user_logged_screen.dart';
+import 'package:mobx_and_onboarding/screens/user_screens/user_register_screen.dart';
+
+import 'user_screens/user_forgot_passoword_screen.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
@@ -18,7 +21,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      resizeToAvoidBottomInset: false,
+      backgroundColor: const Color.fromRGBO(237, 237, 233, 1),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -32,7 +36,7 @@ class LoginPage extends StatelessWidget {
               Text(
                 'Welcome back you\'ve been missed',
                 style: TextStyle(
-                  color: Colors.grey[700],
+                  color: Colors.grey.shade600,
                   fontSize: 16,
                 ),
               ),
@@ -76,10 +80,21 @@ class LoginPage extends StatelessWidget {
                     Expanded(
                       child: Align(
                         alignment: Alignment.centerRight,
-                        child: Text(
-                          'Forgot Password?',
-                          style: TextStyle(
-                            color: Colors.grey[600],
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const UserForgotPasswordScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                            ),
                           ),
                         ),
                       ),
@@ -98,10 +113,31 @@ class LoginPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const UserLoggedPage(),
+                        builder: (context) => const UserLoggedScreen(),
                       ),
                     );
                   },
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(bottom: 16.0),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const UserRegister(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Register Now',
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
               ),
             ],

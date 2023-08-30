@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class IntroPage1 extends StatelessWidget {
-  const IntroPage1({Key? key}) : super(key: key);
+class OnBoardPage1 extends StatelessWidget {
+  const OnBoardPage1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,18 +12,21 @@ class IntroPage1 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
+              height: 32,
+            ),
+            SizedBox(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
                     image: AssetImage('assets/images/desfoque.png'),
-                    width: 250,
+                    width: 265,
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 24,
+              height: 32,
             ),
             SizedBox(
               child: SizedBox(
