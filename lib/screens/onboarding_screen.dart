@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_and_onboarding/screens/onboard_screens/onboard_page_1.dart';
-import 'package:mobx_and_onboarding/screens/onboard_screens/onboard_page_2.dart';
-import 'package:mobx_and_onboarding/screens/onboard_screens/onboard_page_3.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobx_and_onboarding/screens/mobx/onboarding_store.dart';
+import 'package:mobx_and_onboarding/screens/onboard_screens/onboard_page.dart';
+import '../components/next_done_button.dart';
+import '../components/page_indicator.dart';
+import '../components/skip_button.dart';
 import 'login_screen.dart';
 
-class OnBoardingScreen extends StatefulWidget {
-  const OnBoardingScreen({super.key});
+class OnBoardingScreen extends StatelessWidget {
+  final OnboardingStore store = OnboardingStore();
 
-  @override
-  // ignore: library_private_types_in_public_api
-  _OnBoardingScreenState createState() => _OnBoardingScreenState();
-}
-
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final PageController _controller = PageController();
-  bool onLastPage = false;
   final buttonWidth = 95.0;
   final buttonHeight = 50.0;
+
+  OnBoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +24,30 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           PageView(
             controller: _controller,
             onPageChanged: (index) {
-              setState(() {
-                onLastPage = (index == 2);
-              });
+              store.setPageIndex(index);
             },
             children: const [
-              OnBoardPage1(),
-              OnBoardPage2(),
-              OnBoardPage3(),
+              OnBoardPage(
+                imagePath: 'assets/images/desfoque.png',
+                title: 'Use shapes to decorate your designs',
+                description:
+                    'Decorate your design products with relevant shapes. Use basic geometric shapes like squares, circles or more complex shapes such as hearts, stars, bubbles to draw attention to your design segment!',
+                backgroundColor: Color.fromRGBO(215, 206, 255, 1),
+              ),
+              OnBoardPage(
+                imagePath: 'assets/images/quebrado.png',
+                title: 'Combine shapes with other objects',
+                description:
+                    'Use arrows, lines, and illustrations to make unique visuals every time. Shapes may look simplistic and even basic, but they\'re a great addition to your designs. Don\'t get carries away, though! Too many shapes can overcomplicate your design.',
+                backgroundColor: Color.fromARGB(255, 240, 232, 197),
+              ),
+              OnBoardPage(
+                imagePath: 'assets/images/chiclete.png',
+                title: 'Animate shapes to catch the attention',
+                description:
+                    'Geometric makes it very easy to animate any design object. There are animation presets that allow you to make a shape zoom, fade, wobble, shake, spin and more, with just a click of a button.',
+                backgroundColor: Color.fromRGBO(239, 217, 201, 1),
+              ),
             ],
           ),
 
@@ -42,113 +55,38 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              // Indicador de página
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SmoothPageIndicator(
-                    controller: _controller,
-                    count: 3,
-                    axisDirection: Axis.horizontal,
-                    effect: const ExpandingDotsEffect(
-                        spacing: 8.0,
-                        radius: 4.0,
-                        dotWidth: 18.0,
-                        dotHeight: 8.0,
-                        paintStyle: PaintingStyle.fill,
-                        strokeWidth: 1.5,
-                        dotColor: Color.fromRGBO(119, 119, 129, 1),
-                        activeDotColor: Color.fromRGBO(32, 35, 51, 1)),
-                  ),
-                ],
-              ),
-
-              // Espaço entre as duas Rows
+              PageIndicator(controller: _controller, pageCount: 3),
               const SizedBox(height: 32),
-
-              // Row para os botões Skip e Next/Done
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  // Botão Skip
-                  GestureDetector(
-                    onTap: () {
-                      _controller.jumpToPage(2);
-                    },
-                    child: Container(
-                      width: buttonWidth,
-                      height: buttonHeight,
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Skip',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  // Botão Next ou Done
-                  onLastPage
-                      ? GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
+                  SkipButton(
+                      buttonWidth: buttonWidth,
+                      buttonHeight: buttonHeight,
+                      onPressed: () => _controller.jumpToPage(2)),
+                  Observer(
+                    builder: (context) {
+                      return NextDoneButton(
+                        buttonWidth: buttonWidth,
+                        buttonHeight: buttonHeight,
+                        isLastPage: store.isOnLastPage,
+                        onNext: () {
+                          _controller.nextPage(
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn,
+                          );
+                        },
+                        onDone: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
                               return LoginPage();
-                            }));
-                          },
-                          child: Container(
-                            width: buttonWidth,
-                            height: buttonHeight,
-                            padding: const EdgeInsets.symmetric(vertical: 12),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'Done',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      : GestureDetector(
-                          onTap: () {
-                            _controller.nextPage(
-                              duration: const Duration(milliseconds: 500),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          child: Container(
-                            width: buttonWidth,
-                            height: buttonHeight,
-                            padding: const EdgeInsets.symmetric(vertical: 12),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'Next',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                            }),
+                          );
+                        },
+                      );
+                    },
+                  ),
                 ],
               ),
               const SizedBox(
