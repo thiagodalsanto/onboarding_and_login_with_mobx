@@ -32,12 +32,13 @@ Aplicativo Flutter que combina onBoardings personalizados e controle de usuário
 </p>
 
 <p align="center">
-    Erro de login e êxito de cadastro de usuários.
+    Página de Login aparece o botão de Login apenas após um Email válido, mensagem de erro e mensagem de registro.
 </p>
 
 <p align="center">
-    <img src="https://i.imgur.com/EBH0o6p.png" alt="Imagem 1" width="300" style="margin-right: 20px;">
-    <img src="https://i.imgur.com/H8Itzay.png" alt="Imagem 2" width="300" >
+    <img src="https://i.imgur.com/8rxoY3K.png" alt="Imagem 1" width="300" style="margin-right: 20px;">
+    <img src="https://i.imgur.com/fikyh4C.png" alt="Imagem 2" width="300" style="margin-right: 20px;">
+    <img src="https://i.imgur.com/cSVNF3H.png" alt="Imagem 3" width="300" >
 </p>
 
 <p align="center">
@@ -45,8 +46,8 @@ Aplicativo Flutter que combina onBoardings personalizados e controle de usuário
 </p>
 
 <p align="center">
-    <img src="https://github.com/thiagodalsanto/onboarding_and_login_with_mobx/assets/55465433/6715da82-8805-4e69-9522-828c829172d5" width="300">
-<p>
+    <img src="https://github.com/thiagodalsanto/onboarding_and_login_with_mobx/assets/55465433/26539656-5057-4f95-852a-5dfde3b2c648" width="300">
+
 
 ## Licença
 
