@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-class RegistrationNotification {
+class LoginError {
   static Future<bool?> show(BuildContext context) async {
     return await showDialog<bool>(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: Text(
-            'Registration',
+            'Login Error',
             style: TextStyle(
-              color: Colors.teal.shade900,
+              color: Colors.deepOrange.shade700,
             ),
           ),
           content: Text(
-            'You have been registered!',
+            'Not Registered or Email/Password Incorrect.',
             style: TextStyle(
-              color: Colors.teal.shade900,
+              color: Colors.deepOrange.shade700,
             ),
           ),
-          backgroundColor: Colors.green.shade300,
+          backgroundColor: Colors.red.shade400,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
@@ -30,7 +30,7 @@ class RegistrationNotification {
               child: Text(
                 'OK',
                 style: TextStyle(
-                  color: Colors.teal.shade900,
+                  color: Colors.deepOrange.shade700,
                 ),
               ),
             ),

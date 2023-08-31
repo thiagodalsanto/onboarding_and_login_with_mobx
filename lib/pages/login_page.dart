@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobx_and_onboarding/components/buttons/sign_in_button.dart';
+import 'package:mobx_and_onboarding/components/login_error.dart';
 import 'package:mobx_and_onboarding/components/remember_me_checkbox.dart';
 import 'package:mobx_and_onboarding/components/textfield_custom.dart';
 import 'package:mobx_and_onboarding/pages/login_mobx/login_store.dart';
@@ -109,6 +110,8 @@ class LoginPage extends StatelessWidget {
                           builder: (context) => const UserLoggedPage(),
                         ),
                       );
+                    } else {
+                      LoginError.show(context);
                     }
                   },
                 ),
