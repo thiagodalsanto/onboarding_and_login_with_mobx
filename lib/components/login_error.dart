@@ -6,16 +6,16 @@ class LoginError {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(
+          title: const Text(
             'Login Error',
             style: TextStyle(
-              color: Colors.deepOrange.shade700,
+              color: Colors.white,
             ),
           ),
-          content: Text(
+          content: const Text(
             'Not Registered or Email/Password Incorrect.',
             style: TextStyle(
-              color: Colors.deepOrange.shade700,
+              color: Colors.white,
             ),
           ),
           backgroundColor: Colors.red.shade400,
@@ -27,10 +27,10 @@ class LoginError {
               onPressed: () {
                 Navigator.pop(context, true);
               },
-              child: Text(
+              child: const Text(
                 'OK',
                 style: TextStyle(
-                  color: Colors.deepOrange.shade700,
+                  color: Colors.white,
                 ),
               ),
             ),
