@@ -14,9 +14,10 @@ Aplicativo Flutter que combina onBoardings personalizados e controle de usuário
 
 ## Como Executar
 
-1. Clone o repositório do GitHub: `git clone https://github.com/thiagodalsanto/onboarding_and_login_with_mobx.git`
-2. Dentro da pasta do projeto, execute o comando `flutter pub get`
-3. Para executar no Android `flutter run` para o iOS `flutter run -d ios`
+1. Clone o repositório com o comando: `git clone https://github.com/thiagodalsanto/onboarding_and_login_with_mobx.git`
+2. Execute o comando: `cd onboarding_and_login_with_mobx'` para entrar na pasta do repositório
+3. Execute o comando: `flutter pub get` para baixar todas as depedências
+4. Execute o comando `flutter run` para executar a aplicação em um emulador
 
 ## Imagens da Aplicação
 
