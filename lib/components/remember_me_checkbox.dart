@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MyCheckbox extends StatefulWidget {
+class RememberMeCheckBox extends StatefulWidget {
   final bool rememberUser;
   final ValueChanged<bool> onChanged;
 
-  const MyCheckbox({
+  const RememberMeCheckBox({
     Key? key,
     required this.rememberUser,
     required this.onChanged,
@@ -12,10 +12,10 @@ class MyCheckbox extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _MyCheckboxState createState() => _MyCheckboxState();
+  _RememberMeCheckBoxState createState() => _RememberMeCheckBoxState();
 }
 
-class _MyCheckboxState extends State<MyCheckbox> {
+class _RememberMeCheckBoxState extends State<RememberMeCheckBox> {
   late bool _isChecked;
 
   @override

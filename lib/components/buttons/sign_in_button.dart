@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyButton extends StatelessWidget {
+class SignInButton extends StatelessWidget {
   final VoidCallback? onTap;
 
-  const MyButton({
+  const SignInButton({
     Key? key,
     required this.onTap,
   }) : super(key: key);

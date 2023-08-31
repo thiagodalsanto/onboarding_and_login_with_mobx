@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class OnBoardPage extends StatelessWidget {
+class OnBoardPageCustom extends StatelessWidget {
   final String imagePath;
   final String title;
   final String description;
   final Color backgroundColor;
 
-  const OnBoardPage({
+  const OnBoardPageCustom({
     Key? key,
     required this.imagePath,
     required this.title,

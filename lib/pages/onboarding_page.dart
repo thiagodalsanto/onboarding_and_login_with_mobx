@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx_and_onboarding/screens/mobx/onboarding_store.dart';
-import 'package:mobx_and_onboarding/screens/onboard_screens/onboard_page.dart';
-import '../components/next_done_button.dart';
+import 'package:mobx_and_onboarding/pages/onboarding_mobx/onboarding_store.dart';
+import 'package:mobx_and_onboarding/pages/onboarding_pages/onboard_page_custom.dart';
+import '../components/buttons/next_done_button.dart';
 import '../components/page_indicator.dart';
-import '../components/skip_button.dart';
-import 'login_screen.dart';
+import '../components/buttons/skip_button.dart';
+import 'login_page.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingPage extends StatelessWidget {
   final OnboardingStore store = OnboardingStore();
 
   final PageController _controller = PageController();
   final buttonWidth = 95.0;
   final buttonHeight = 50.0;
 
-  OnBoardingScreen({super.key});
+  OnBoardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +27,21 @@ class OnBoardingScreen extends StatelessWidget {
               store.setPageIndex(index);
             },
             children: const [
-              OnBoardPage(
+              OnBoardPageCustom(
                 imagePath: 'assets/images/desfoque.png',
                 title: 'Use shapes to decorate your designs',
                 description:
                     'Decorate your design products with relevant shapes. Use basic geometric shapes like squares, circles or more complex shapes such as hearts, stars, bubbles to draw attention to your design segment!',
                 backgroundColor: Color.fromRGBO(215, 206, 255, 1),
               ),
-              OnBoardPage(
+              OnBoardPageCustom(
                 imagePath: 'assets/images/quebrado.png',
                 title: 'Combine shapes with other objects',
                 description:
                     'Use arrows, lines, and illustrations to make unique visuals every time. Shapes may look simplistic and even basic, but they\'re a great addition to your designs. Don\'t get carries away, though! Too many shapes can overcomplicate your design.',
                 backgroundColor: Color.fromARGB(255, 240, 232, 197),
               ),
-              OnBoardPage(
+              OnBoardPageCustom(
                 imagePath: 'assets/images/chiclete.png',
                 title: 'Animate shapes to catch the attention',
                 description:
