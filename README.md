@@ -11,7 +11,7 @@ Aplicativo Flutter que combina onBoardings personalizados e controle de usuário
 - **OnBoardings Personalizados:** Apresenta aos usuários as características genéricas de um aplicativo por meio de telas de onBoarding personalizadas, fornecendo uma introdução envolvente :sunglasses:
 - **Controle de Usuários com MobX** Utiliza o poder do MobX para gerenciar o estado de registro dos usuários, permitindo um fluxo seguro de login e registro;
 - **Redirecionamento de Páginas:** Redirecionamento de páginas controlado pelo MobX;
-- **Email Necessário:* Ações de Login e Registro acessíveis apenas após digitar um email válido.
+- **Email Necessário:** Ações de Login e Registro acessíveis apenas após digitar um email válido.
 
 ## Como Executar
 
